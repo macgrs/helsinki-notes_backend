@@ -1,5 +1,16 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
+
+
+var corsOptions = {
+  origin: 'http://localhost:5173',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
+
+
 
 let notes = [
   {
@@ -15,11 +26,6 @@ let notes = [
   {
     id: 3,
     content: "GET and POST are the most important methods of HTTP protocol",
-    important: true
-  },
-  {
-    id: 4,
-    content: "The fourth note",
     important: true
   }
 ]
